@@ -1,0 +1,12 @@
+// Define your breakpoints mixins
+@mixin breakpoint-md {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin breakpoint-lg {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
