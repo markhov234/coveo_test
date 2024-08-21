@@ -1,7 +1,7 @@
-@import "sass/variables";
-@import "sass/base";
-@import "sass/mixins";
-@import "sass/title";
+@import "styles/variables";
+@import "styles/base";
+@import "styles/mixins";
+@import "styles/title";
 /* Reset some default styles */
 body,
 p {
@@ -19,7 +19,7 @@ p {
   }
   &__nav {
     padding: 0 20px;
-    max-width: $max-width;
+    max-width: $desktop-max-width;
   }
 
   &__title {
@@ -33,7 +33,7 @@ p {
   padding: $mobile-padding;
   @include breakpoint-lg {
     display: flex;
-    max-width: $max-width;
+    max-width: $desktop-max-width;
     margin: auto;
     padding: $desktop-padding;
   }
@@ -215,10 +215,10 @@ p {
   overflow: hidden;
   perspective: 1000px;
   padding: 0 20px 20px;
+  max-width: $desktop-max-width;
   @include breakpoint-lg {
     margin: auto;
   }
-  max-width: $max-width;
   &-title {
     margin: 45px 0;
   }

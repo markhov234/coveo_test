@@ -1,3 +1,6 @@
+/*!********************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/style/sass/style.scss ***!
+  \********************************************************************************************************************/
 body {
   font-family: "Lato", sans-serif;
   background-color: #f6f7f9;
@@ -303,4 +306,4 @@ p {
   font-size: 1rem;
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=styles.css.map*/

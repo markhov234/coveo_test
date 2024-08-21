@@ -1,4 +1,4 @@
-// apiConfig.js or directly in your script
+// src/apiConfig.js
 
 const apiKey = process.env.APP_API_KEY; // Access the API key from the .env file
 const speakersUrl = process.env.APP_SPEAKERS_URL; // Access the speakers URL from the .env file
