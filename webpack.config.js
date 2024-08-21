@@ -1,10 +1,8 @@
 const path = require("path");
 const Dotenv = require("dotenv-webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  mode: "development", // or 'production' depending on your environment
   entry: "./src/script/index.js",
   output: {
     filename: "index.js",
@@ -22,11 +20,7 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: [
-          MiniCssExtractPlugin.loader, // Extracts CSS into separate files
-          "css-loader",
-          "sass-loader",
-        ],
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
     ],
   },
@@ -39,9 +33,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/index.html",
     }),
-    new MiniCssExtractPlugin({
-      filename: "styles.css", // Output CSS file
-    }),
   ],
   devtool: "source-map",
   devServer: {
@@ -49,4 +40,5 @@ module.exports = {
     compress: true,
     port: 9000,
   },
+  mode: process.env.NODE_ENV || "development",
 };

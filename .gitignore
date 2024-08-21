@@ -1,3 +1,4 @@
 node_modules/
 # js/apiconfig.js
 .env
+dist/
