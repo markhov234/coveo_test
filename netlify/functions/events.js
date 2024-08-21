@@ -1,6 +1,5 @@
-const fetch = require("node-fetch");
-
 exports.handler = async function (event, context) {
+  const { default: fetch } = await import("node-fetch");
   const apiKey = process.env.APP_API_KEY;
   const eventsUrl = process.env.APP_EVENTS_URL;
 
