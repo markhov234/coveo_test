@@ -14,9 +14,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-        },
+        use: "babel-loader",
       },
       {
         test: /\.scss$/,
@@ -39,6 +37,7 @@ module.exports = {
     static: path.resolve(__dirname, "dist"),
     compress: true,
     port: 9000,
+    hot: true, // Enable Hot Module Replacement
   },
   mode: process.env.NODE_ENV || "development",
 };

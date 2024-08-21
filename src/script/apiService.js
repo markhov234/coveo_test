@@ -10,7 +10,6 @@ export async function fetchSpeakers() {
   });
   return response.json();
 }
-
 export async function fetchEvents() {
   const response = await fetch(eventsUrl, {
     method: "GET",

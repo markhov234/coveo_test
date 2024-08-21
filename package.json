@@ -4,8 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch css/style.scss:src/style.css",
-    "start": "live-server --watch=css,js,index.html",
     "build": "webpack --mode=production",
     "serve": "webpack serve"
   },
