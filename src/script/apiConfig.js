@@ -16,6 +16,6 @@ const eventsUrl = isLocal
   : process.env.APP_EVENTS_URL;
 
 // Do not expose the API key directly in client-side code
-const apiKey = isLocal ? process.env.APP_API_KEY_LOCAL : process.env.APP_EVENTS_URL;;
+const apiKey = isLocal ? process.env.APP_API_KEY_LOCAL : "";
 
 export { speakersUrl, eventsUrl, apiKey };
