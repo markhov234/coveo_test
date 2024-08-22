@@ -6,7 +6,7 @@ import "../style/sass/style.scss";
 
 document.addEventListener("DOMContentLoaded", async () => {
   await loadSpeakers();
-  await loadMainEvent();
+  // await loadMainEvent();
 
   // Attach the form handler
   const form = document.querySelector("#registration-form");

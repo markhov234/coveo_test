@@ -31,6 +31,32 @@ p {
 .main-content {
   flex-grow: 1;
   padding: $mobile-padding;
+  position: relative;
+  overflow: hidden;
+  &::before {
+    content: "";
+    display: block;
+    height: 388px;
+    width: 388px;
+    background-color: red;
+    clear: both;
+    position: absolute;
+    z-index: -1;
+    right: 0%;
+    top: -200px;
+    transform: translateX(55%);
+    border-radius: 50%;
+    @include breakpoint-lg {
+      height: 688px;
+      width: 688px;
+      top: 40px;
+    }
+    @include breakpoint-md {
+      height: 688px;
+      width: 688px;
+      top: -140px;
+    }
+  }
   @include breakpoint-lg {
     display: flex;
     max-width: $desktop-max-width;
@@ -58,15 +84,16 @@ p {
       font-size: 16px;
       font-weight: 500;
       transition: ease-in-out 0.3s;
+      margin: 10px 0;
       &:hover {
         background-color: darken($coveo-button-blue, 20%);
       }
     }
     &-input {
-      margin: 25px 0;
+      margin: 30px 0;
       & input {
         width: 100%;
-        padding: 10px;
+        padding: 15px;
         border: 1px solid #e5e8e8;
         border-radius: 8px;
         font-size: 16px;
@@ -85,8 +112,9 @@ p {
     }
     &-section {
       background-color: $form-background-color;
-      padding: 35px;
+      padding: 35px 30px;
       width: 275px;
+      box-shadow: $form-box-shadow;
     }
   }
   &__section {
