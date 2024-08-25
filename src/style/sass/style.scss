@@ -27,13 +27,6 @@ p {
   }
 }
 
-.circle-wrapper {
-  position: absolute;
-  right: -50px; /* Half of the circle's width, to show part of it */
-  top: 50%;
-  transform: translateY(-50%); /* Center vertically */
-}
-
 /* Main content styling */
 
 .main-content {
@@ -41,15 +34,25 @@ p {
   padding: $mobile-padding;
   position: relative;
   overflow: hidden;
+
   &::before {
     content: "";
     position: absolute;
-    top: 4em;
-    left: 75%;
+    top: 60%;
+    left: 50%;
     background-image: url("../../images/image.svg");
     width: 100%;
     height: 100%;
     background-repeat: no-repeat;
+    z-index: -1;
+    @include breakpoint-md {
+      top: 55%;
+      left: 60%;
+    }
+    @include breakpoint-lg {
+      top: 4em;
+      left: 70%;
+    }
   }
   @include breakpoint-lg {
     display: flex;
@@ -59,13 +62,13 @@ p {
   }
   &__form {
     flex: 1 1 calc(50% - 16px); /* 50% width minus half of the gap */
-    padding: 20px 0;
+    padding: 20px 0 50px;
     display: flex;
     justify-content: center;
     position: relative;
     @include breakpoint-md {
       height: fit-content;
-      padding-top: 100px;
+      padding: 100px;
     }
     &-button {
       background-color: $coveo-button-blue;
@@ -107,8 +110,10 @@ p {
     &-section {
       background-color: $form-background-color;
       padding: 35px 30px;
-      width: 275px;
-      box-shadow: $form-box-shadow;
+      width: 375px;
+      @include breakpoint-lg {
+        width: 275px;
+      }
     }
   }
   &__section {
@@ -248,8 +253,14 @@ p {
     display: flex;
     padding-top: 50px;
     flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-between;
+    gap: 40px;
+    justify-content: center;
+    @include breakpoint-md {
+      justify-content: center;
+    }
+    @include breakpoint-lg {
+      justify-content: space-between;
+    }
   }
   &-card {
     position: relative;
@@ -257,8 +268,7 @@ p {
     text-decoration: none;
     background-color: $form-background-color;
     flex: 0 0 auto;
-
-    max-width: 265px;
+    max-width: 315px;
     transition: ease-out 0.2s;
     &:first-child {
       margin-left: 0;
@@ -267,7 +277,7 @@ p {
       margin-right: 0;
     }
     @include breakpoint-lg {
-      // max-width: 315px;
+      max-width: 265px;
     }
     &:hover {
       transform: scale(1.02) translateY(-30px); /* Scale the card by 15% */
