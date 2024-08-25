@@ -17,6 +17,13 @@ module.exports = {
         use: "babel-loader",
       },
       {
+        test: /\.(png|jpg|jpeg|gif|svg)$/,
+        type: "asset/resource",
+        generator: {
+          filename: "images/[name][hash][ext]", // Customize the output directory and filename
+        },
+      },
+      {
         test: /\.scss$/,
         use: ["style-loader", "css-loader", "sass-loader"],
       },

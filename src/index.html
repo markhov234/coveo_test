@@ -9,7 +9,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
 
 
-    <!-- <link rel="stylesheet" href="style.css"> -->
 </head>
 <body>
 
@@ -59,7 +58,6 @@
             </svg>
         </nav>
     </header>
-
     <main class="main-content">
         <section class="main-content__info" id="content">
             <div class="main-content__info-header">
@@ -88,96 +86,35 @@
             </div>
         </section>
 <section class="main-content__form">
-    <form class="main-content__form-section br8 box-shadow-1" id="registration-form">
-        <p class="main-content__form-title">Register</p>
-        <div class="main-content__form-input">
-            <input type="text" id="first-name" name="first_name" placeholder="First Name" required>
-        </div>
-        <div class="main-content__form-input">
-            <input type="text" id="last-name" name="last_name" placeholder="Last Name" required>
-        </div>
-        <div class="main-content__form-input">
-            <input type="email" id="email" name="email" placeholder="Email Address" required>
-        </div>
-        <button type="submit" class="main-content__form-button">Register</button>
-    </form>
+<form class="main-content__form-section br8 box-shadow-1" id="registration-form">
+    <p class="main-content__form-title">Register</p>
+    <div class="main-content__form-input">
+        <input type="text" id="first-name" name="first_name" placeholder="First Name" required pattern="[A-Za-z ]+"
+            title="Only letters and spaces are allowed">
+    </div>
+    <div class="main-content__form-input">
+        <input type="text" id="last-name" name="last_name" placeholder="Last Name" required pattern="[A-Za-z ]+"
+            title="Only letters and spaces are allowed">
+    </div>
+    <div class="main-content__form-input">
+        <input type="email" id="email" name="email" placeholder="Email Address" required>
+    </div>
+    <button type="submit" class="main-content__form-button">Register</button>
+    <p id="form-message"></p> 
+</form>
+
 </section>
     </main>
+ 
 <section class="banner-ressources">
     <h2 class="banner-ressources-title h2">Events that you may be interested in:</h2>
     <div class="banner-ressources-scroll">
-        <a href="#" class="banner-ressources-card br8 box-shadow-1">
-            <img class="banner-ressources-image" src="https://placehold.co/265x165" alt="">
-            <div class="banner-ressources-content">
-                <h3 class="banner-ressources-cardtitle">Delevier effortless Customer Support</h3>
-                <p class="banner-ressources-description">
-                    lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium quisquam cum nisi mollitia
-                    nostrum odio
-                    eum at repellendus perferendis? Recusandae impedit culpa debitis, libero est aperiam omnis expedita
-                    illum
-                    iste?
-                </p>
-            </div>
-        </a>
-        <div class="banner-ressources-card br8 box-shadow-1">
-            <img class="banner-ressources-image" src="https://placehold.co/265x165" alt="">
-            <div class="banner-ressources-content">
-                <h3 class="banner-ressources-cardtitle">Delevier effortless Customer Support</h3>
-                <p class="banner-ressources-description">
-                    lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium quisquam cum nisi mollitia
-                    nostrum odio
-                    eum at repellendus perferendis? Recusandae impedit culpa debitis, libero est aperiam omnis expedita
-                    illum
-                    iste?
-                </p>
-            </div>
-        </div>
-        <div class="banner-ressources-card br8 box-shadow-1">
-            <img class="banner-ressources-image" src="https://placehold.co/265x165" alt="">
-            <div class="banner-ressources-content">
-                <h3 class="banner-ressources-cardtitle">Delevier effortless Customer Support</h3>
-                <p class="banner-ressources-description">
-                    lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium quisquam cum nisi mollitia
-                    nostrum odio
-                    eum at repellendus perferendis? Recusandae impedit culpa debitis, libero est aperiam omnis expedita
-                    illum
-                    iste?
-                </p>
-            </div>
-        </div>
-        <div class="banner-ressources-card br8 box-shadow-1">
-            <img class="banner-ressources-image" src="https://placehold.co/265x165" alt="">
-            <div class="banner-ressources-content">
-                <h3 class="banner-ressources-cardtitle">Delevier effortless Customer Support</h3>
-                <p class="banner-ressources-description">
-                    lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium quisquam cum nisi mollitia
-                    nostrum odio
-                    eum at repellendus perferendis? Recusandae impedit culpa debitis, libero est aperiam omnis expedita
-                    illum
-                    iste?
-                </p>
-            </div>
-        </div>
-        <div class="banner-ressources-card br8 box-shadow-1">
-            <img class="banner-ressources-image" src="https://placehold.co/265x165" alt="">
-            <div class="banner-ressources-content">
-                <h3 class="banner-ressources-cardtitle">Delevier effortless Customer Support</h3>
-                <p class="banner-ressources-description">
-                    lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium quisquam cum nisi mollitia
-                    nostrum odio
-                    eum at repellendus perferendis? Recusandae impedit culpa debitis, libero est aperiam omnis expedita
-                    illum
-                    iste?
-                </p>
-            </div>
-        </div>
     </div>
 </section>
     <footer class="footer">
         <p class="footer__text">© 2020 Coveo Solutions Inc. All Rights Reserved.</p>
     </footer>
 
-    <!-- <script type="module" src="index.js"></script> -->
     
 </body>
 

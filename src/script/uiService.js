@@ -110,6 +110,31 @@ export async function loadMainEvent() {
     mainTitleElement.textContent = mainEvent.title;
     mainDateElement.textContent = formatDate(mainEvent.date);
     mainDescriptionElement.textContent = mainEvent.description;
+
+    const remainingEvents = eventsData.filter(
+      (event) => event.category !== "r360"
+    );
+
+    console.log(remainingEvents[0]);
+    remainingEvents.forEach((event) => {
+      const eventElement = document.createElement("a");
+      eventElement.id = event._id;
+      eventElement.href = "#";
+      eventElement.className = "banner-ressources-card br8 box-shadow-1";
+
+      eventElement.innerHTML = `  
+          <img class="banner-ressources-image" src="${event.thumbnail}" alt="">
+            <div class="banner-ressources-content">
+                <h3 class="banner-ressources-cardtitle">${event.title}</h3>
+                <p class="banner-ressources-description">
+                ${event.description}
+                </p>
+            </div>
+      `;
+      document
+        .querySelector(".banner-ressources-scroll")
+        .appendChild(eventElement);
+    });
   } catch (error) {
     console.error("Error loading main event:", error);
 
