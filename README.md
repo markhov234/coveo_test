@@ -1,4 +1,4 @@
-##To Install on Local
+#To Install on Local
 
 1. Clone the branch
 2. Npm install
@@ -6,7 +6,7 @@
 4. Npm run serve (build the project each new save)
 
 
-##Publish on production 
+#Publish on production 
 1. When pushing to main branch, this is gonna deploy on netlify
 2. Work on new branch before pushing live.
 
