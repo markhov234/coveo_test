@@ -1,15 +1,14 @@
-import { apiKey, usersUrl } from "./apiConfig.js";
+import { fetchUsers, registerUser } from "./apiService.js";
 
-// Function to handle form submission
 async function handleFormSubmit(event) {
-  event.preventDefault(); // Prevent the default form submission
+  event.preventDefault();
 
   const form = event.target;
   const formData = new FormData(form);
   const userData = Object.fromEntries(formData.entries());
 
   const formMessage = document.getElementById("form-message");
-  formMessage.textContent = ""; // Clear previous messages
+  formMessage.textContent = "";
 
   // Validate form inputs
   if (!validateForm(userData)) {
@@ -20,16 +19,7 @@ async function handleFormSubmit(event) {
   }
 
   try {
-    // Fetch existing users to check if the email or name combination already exists
-    const response = await fetch(usersUrl, {
-      method: "GET",
-      headers: {
-        "x-apikey": apiKey,
-        "Content-Type": "application/json",
-      },
-    });
-
-    const users = await response.json();
+    const users = await fetchUsers();
 
     // Check for unique constraints
     const emailExists = users.some((user) => user.email === userData.email);
@@ -45,7 +35,7 @@ async function handleFormSubmit(event) {
 
     switch (true) {
       case emailExists && nameExists && lastNameExists:
-        message = "A user with this email, name and last name already exists.";
+        message = "A user with this email, name, and last name already exists.";
         break;
       case emailExists && nameExists:
         message = "A user with this email and name already exists.";
@@ -67,19 +57,12 @@ async function handleFormSubmit(event) {
         break;
       default:
         // If no conflicts, register the new user
-        const registrationResponse = await fetch(usersUrl, {
-          method: "POST",
-          headers: {
-            "x-apikey": apiKey,
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(userData),
-        });
+        const registrationResponse = await registerUser(userData);
 
         if (registrationResponse.ok) {
           message = "Registration completed.";
           color = "green";
-          form.reset(); // Reset the form on successful registration
+          form.reset();
         } else {
           message = "Registration failed. Please try again.";
         }
@@ -97,12 +80,12 @@ async function handleFormSubmit(event) {
 
 // Function to validate form data
 function validateForm(data) {
-  // Check if names are non-empty and contain only letters and spaces
   const namePattern = /^[A-Za-z ]+$/;
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return (
     namePattern.test(data.first_name) &&
     namePattern.test(data.last_name) &&
-    data.email
+    emailPattern.test(data.email)
   );
 }
 

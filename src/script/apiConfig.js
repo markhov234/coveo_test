@@ -12,6 +12,7 @@ const eventsUrl = isLocal
 const usersUrl = isLocal
   ? process.env.APP_USERS_URL_LOCAL
   : "/.netlify/functions/users";
+  
 
 const apiKey = isLocal ? process.env.APP_API_KEY_LOCAL : "";
 
