@@ -115,7 +115,6 @@ export async function loadMainEvent() {
       (event) => event.category !== "r360"
     );
 
-    console.log(remainingEvents[0]);
     remainingEvents.forEach((event) => {
       const eventElement = document.createElement("a");
       eventElement.id = event._id;

@@ -17,10 +17,10 @@ module.exports = {
         use: "babel-loader",
       },
       {
-        test: /\.(png|jpg|jpeg|gif|svg)$/,
+        test: /\.(png|jpg|jpeg|gif|svg|ico)$/,
         type: "asset/resource",
         generator: {
-          filename: "images/[name][hash][ext]", // Customize the output directory and filename
+          filename: "images/[name][hash][ext]",
         },
       },
       {
@@ -37,6 +37,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: "./src/index.html",
+      favicon: path.resolve(__dirname, "src/images/coveoIcon.png"), // Specify the PNG file here
     }),
   ],
   devtool: "source-map",
